@@ -1,6 +1,7 @@
 import { Row, Col, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { AddCompanyAction } from "../Redux/ACTIONS";
 
 const Job = ({ data }) => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const Job = ({ data }) => {
         <Button
           variant="primary"
           onClick={() => {
-            dispatch({ type: "ADD_COMPANY", payload: data });
+            dispatch(AddCompanyAction(data));
           }}
         >
           ADD FAVOURITES

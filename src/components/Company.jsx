@@ -1,6 +1,7 @@
 import { Button, Col, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { DeleteCompanyAction } from "../Redux/ACTIONS";
 
 const Company = ({ company, i }) => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const Company = ({ company, i }) => {
         <Button
           variant="primary"
           onClick={() => {
-            dispatch({ type: "DELETE_COMPANY", payload: i });
+            dispatch(DeleteCompanyAction(i));
           }}
         >
           DELETE FAVOURITES
